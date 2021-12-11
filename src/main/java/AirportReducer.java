@@ -8,7 +8,7 @@ import java.io.IOException;
 public class AirportReducer extends Reducer<FlightWritableComparable, Text, IntWritable, Text> {
 
     @Override
-    protected void reduce(FlightWritableComparable key, Iterable<IntWritable> values, Context context) throws
+    protected void reduce(FlightWritableComparable key, Iterable<Text> values, Context context) throws
             IOException, InterruptedException {
         long count = 0;
         while (values.iterator().hasNext()) {
