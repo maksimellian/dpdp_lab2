@@ -32,7 +32,7 @@ public class AirportReducer extends Reducer<FlightWritableComparable, Text, IntW
             counter++;
         }
         if (counter > 0) {
-            String res = String.format()
+            String res = String.format("%.2f %.2f %.2f %.2f")
             context.write(new IntWritable(key.getAirportID()), new Text(res));
         }
     }
