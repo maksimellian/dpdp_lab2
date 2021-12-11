@@ -15,6 +15,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableCompa
         String[] rows = value.toString().split(",");
         if (key.get() > 0) {
             String airportID = rows[DEST_AIRPORT_ID];
+            String flightDelay = rows
             if (!rows[DELAY].isEmpty()) {
                 context.write(new FlightWritableComparable(Integer.parseInt(airportID), INDICATOR), new Text(rows[DELAY]));
             }
