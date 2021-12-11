@@ -32,7 +32,7 @@ public class AirportReducer extends Reducer<FlightWritableComparable, Text, IntW
             counter++;
         }
         if (counter > 0) {
-            context.write(new Text("Airport: " + ));
+            context.write(new Text("Airport: " + airportName), );
         }
     }
 }
