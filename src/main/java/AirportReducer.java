@@ -32,7 +32,7 @@ public class AirportReducer extends Reducer<FlightWritableComparable, Text, IntW
             counter++;
         }
         if (counter > 0) {
-            context.write();
+            context.write(new IntWritable());
         }
     }
 }
