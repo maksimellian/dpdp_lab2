@@ -20,7 +20,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableCompa
         String airportID = rows[DEST_AIRPORT_ID];
         if (key.get() > 0) {
             if (!rows[DELAY].isEmpty()) {
-                context.write(new FlightWritableComparable(Integer.parseInt(airportID), 1), new Text(rows[DELAY]));
+                context.write(new FlightWritableComparable(Integer.parseInt(airportID), INDICATOR), new Text(rows[DELAY]));
             }
         }
         /*String str = value.toString().toLowerCase();
