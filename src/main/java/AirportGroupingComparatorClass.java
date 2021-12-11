@@ -5,5 +5,7 @@ public class AirportGroupingComparatorClass extends WritableComparator{
         super(FlightWritableComparable.class, true);
     }
 
-    
+    public int compare() {
+        
+    }
 }
