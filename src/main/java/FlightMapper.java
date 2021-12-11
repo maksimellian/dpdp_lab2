@@ -16,7 +16,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableCompa
     protected void map(LongWritable key, Text value, Context context) throws IOException,
             InterruptedException {
         String[] rows = value.toString().split(",");
-        String airportID
+        String airportID = values
         /*String str = value.toString().toLowerCase();
         str = str.replaceAll("[^'а-я\\w-'а-я]"," ");
         String[] words = str.split(" ");
