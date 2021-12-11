@@ -9,7 +9,8 @@ public class FlightWritableComparable implements WritableComparable<FlightWritab
     int indicator;
     public FlightWritableComparable(int airportID, int indicator) {
         super();
-        this.
+        this.airportID = airportID;
+        this.indicator = indicator;
     }
 
     @Override
