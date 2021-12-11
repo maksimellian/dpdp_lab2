@@ -14,8 +14,8 @@ public class AirportMapper extends Mapper<LongWritable, Text, FlightWritableComp
             InterruptedException {
         String[] airports = value.toString().split(",");
         if (key.get() > 0) {
-            String airport = airports[AIRPORT_ID].replaceAll("\"", "");
-            context.write(new FlightWritableComparable(Integer.parseInt(airport), INDICATOR), new Text(airports[DESCRIPTION]));
+            String airportID = airports[AIRPORT_ID].replaceAll("\"", "");
+            context.write(new FlightWritableComparable(Integer.parseInt(airportID), INDICATOR), new Text(airports[DESCRIPTION]));
         }
     }
 }
