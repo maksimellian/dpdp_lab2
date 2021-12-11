@@ -5,6 +5,6 @@ public class AirportPartitioner extends Partitioner<FlightWritableComparable, Te
 
     @Override
     public int getPartition(FlightWritableComparable flightWritableComparable, Text text, int i) {
-        
+        return 
     }
 }
