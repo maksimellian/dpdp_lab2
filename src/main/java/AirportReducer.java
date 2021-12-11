@@ -31,6 +31,6 @@ public class AirportReducer extends Reducer<FlightWritableComparable, Text, IntW
             totalDelay += delay;
             counter++;
         }
-        String res = String.format("%s %.2f %.2f %.2f %.2f", airportName, totalDelay/counter,)
+        
     }
 }
