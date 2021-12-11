@@ -31,6 +31,8 @@ public class AirportReducer extends Reducer<FlightWritableComparable, Text, IntW
             totalDelay += delay;
             counter++;
         }
-        if 
+        if (counter > 0) {
+            
+        }
     }
 }
