@@ -8,7 +8,7 @@ import java.io.IOException;
 
 
 //применяется к каждой строке файла и преобразует в ее в набор пар key value
-public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableComparable, IntWritable> {
+public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableComparable, Text> {
     public static final float CANCELLED = 1.0f;
     public static final int DEST_AIRPORT_ID = 14; // номер колонки id аэропорта прибытия
     public static final int DELAY = 18; // номер колонки задержки
@@ -20,7 +20,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableCompa
         String airportID = rows[DEST_AIRPORT_ID];
         if (key.get() > 0) {
             if (!rows[DELAY].isEmpty()) {
-                context.write(new FlightWritableComparable(Integer.parseInt(rows[DEST_AIRPORT_ID]), 1), new N);
+                context.write(new FlightWritableComparable(Integer.parseInt(rows[DEST_AIRPORT_ID]), 1), new Text());
             }
         }
         /*String str = value.toString().toLowerCase();
