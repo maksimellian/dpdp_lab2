@@ -1,7 +1,7 @@
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.io.WritableComparator;
 
-// разбивает исходные данные reduce на группы
+// разбивает исходные данные reduce на группы (зачем?)
 // не очень понял, что за группы
 public class AirportGroupingComparatorClass extends WritableComparator{
     public AirportGroupingComparatorClass() {
