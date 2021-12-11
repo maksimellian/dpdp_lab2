@@ -10,7 +10,7 @@ import java.io.IOException;
 //применяется к каждой строке файла и преобразует в ее в набор пар key value
 public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableComparable, IntWritable> {
     public static final float CANCELLED = 1.0f;
-    public static final int AEROPORT_ID = 14;
+    public static final int AIRPORT_ID = 14;
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException,
             InterruptedException {
