@@ -7,6 +7,7 @@ import java.io.IOException;
 public class FlightWritableComparable implements WritableComparable<FlightWritableComparable> {
     int airportID;
     int indicator;
+    
     public FlightWritableComparable(int airportID, int indicator) {
         super();
         this.airportID = airportID;
@@ -18,7 +19,7 @@ public class FlightWritableComparable implements WritableComparable<FlightWritab
         if (this.airportID == flightWritableComparable.airportID) {
             return this.indicator - flightWritableComparable.indicator;
         }
-        return this.
+        return this.airportID - flightWritableComparable.airportID;
     }
 
     @Override
