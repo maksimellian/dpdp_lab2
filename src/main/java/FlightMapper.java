@@ -8,7 +8,7 @@ import java.io.IOException;
 
 
 //применяется к каждой строке файла и преобразует в ее в набор пар key value
-public class FlightMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableComparable, IntWritable> {
     public static final float CANCELLED = 1.0f;
 
     @Override
