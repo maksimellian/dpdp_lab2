@@ -21,7 +21,8 @@ public class AirportApp {
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
         job.setMapOutputKeyClass(FlightWritableComparable.class);
         job.setMapOutputValueClass(Text.class);
-        job.setPartitionerClass();
+        job.setPartitionerClass(AirportPartitioner.class);
+        
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
         job.setNumReduceTasks(2);
