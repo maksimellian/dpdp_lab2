@@ -12,6 +12,10 @@ public class FlightWritableComparable implements WritableComparable<FlightWritab
 
     }
 
+    public int getAirportID() {
+        return this.airportID;
+    }
+
     public FlightWritableComparable(int airportID, int indicator) {
         super();
         this.airportID = airportID;
