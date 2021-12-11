@@ -9,7 +9,7 @@ public class FlightWritableComparable implements WritableComparable<FlightWritab
     int indicator;
 
     public FlightWritableComparable() {
-        
+
     }
 
     public FlightWritableComparable(int airportID, int indicator) {
