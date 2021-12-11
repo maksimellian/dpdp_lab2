@@ -5,7 +5,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
-public class AirportMapper extends Mapper<LongWritable, Text, Text, Text> {
+public class AirportMapper extends Mapper<LongWritable, Text, FlightWritableComparable, Text> {
     public static final int AIRPORT_ID = 0;
     public static final int DESCRIPTION = 1;
     public static final int INDICATOR = 0;
