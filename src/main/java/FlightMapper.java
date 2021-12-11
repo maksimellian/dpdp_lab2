@@ -9,6 +9,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableCompa
     public static final int DEST_AIRPORT_ID = 14; // номер колонки id аэропорта прибытия
     public static final int DELAY = 18; // номер колонки задержки
     public static final int INDICATOR = 1; // индикатор датасета полетов
+    public static final int STATUS = 19;
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException,
             InterruptedException {
@@ -16,7 +17,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableCompa
         if (key.get() > 0) {
             String airportID = rows[DEST_AIRPORT_ID];
             String flightDelay = rows[DELAY];
-            boolean cancelled = Float.parseFloat(row[])
+            boolean cancelled = Float.parseFloat(rows[STATUS]);
             if (!rows[DELAY].isEmpty()) {
                 context.write(new FlightWritableComparable(Integer.parseInt(airportID), INDICATOR), new Text(flightDelay));
             }
