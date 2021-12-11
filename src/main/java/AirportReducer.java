@@ -17,6 +17,9 @@ public class AirportReducer extends Reducer<FlightWritableComparable, Text, IntW
         Iterator<Text> iterator = values.iterator();
         String airportName = iterator.next().toString();
         int counter = 0;
+        float minDelay = Float.MAX_VALUE;
+        float maxDelay = Float.MIN_VALUE;
+        float totalDelay = 0;
         
     }
 }
