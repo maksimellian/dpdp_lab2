@@ -19,7 +19,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableCompa
         String[] rows = value.toString().split(",");
         String airportID = rows[DEST_AIRPORT_ID];
         if (key.get() > 0) {
-            if (rows[])
+            if (rows[DELAY])
         }
         /*String str = value.toString().toLowerCase();
         str = str.replaceAll("[^'а-я\\w-'а-я]"," ");
