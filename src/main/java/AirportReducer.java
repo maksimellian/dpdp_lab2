@@ -10,11 +10,6 @@ public class AirportReducer extends Reducer<FlightWritableComparable, Text, IntW
     @Override
     protected void reduce(FlightWritableComparable key, Iterable<Text> values, Context context) throws
             IOException, InterruptedException {
-        long count = 0;
-        while (values.iterator().hasNext()) {
-            values.iterator().next();
-            count += 1;
-        }
-        context.write(key, new LongWritable(count));
+        
     }
 }
