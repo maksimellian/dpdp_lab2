@@ -16,7 +16,7 @@ public class AirportApp {
         job.setJarByClass(AirportApp.class);
         job.setJobName("Airport app");
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, FlightMapper.class);
-        MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, FlightMapper.class);
+        MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, AirportMapper.class);
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
         job.setMapOutputKeyClass(FlightWritableComparable.class);
         job.setMapOutputValueClass(Text.class);

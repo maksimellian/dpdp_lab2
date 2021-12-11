@@ -12,6 +12,6 @@ public class AirportGroupingComparatorClass extends WritableComparator{
     public int compare(WritableComparable a, WritableComparable b) {
         FlightWritableComparable first = (FlightWritableComparable) a;
         FlightWritableComparable second = (FlightWritableComparable) b;
-        return first.compareTo(second);
+        return Integer
     }
 }

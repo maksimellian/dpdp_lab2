@@ -15,6 +15,9 @@ public class FlightWritableComparable implements WritableComparable<FlightWritab
     public int getAirportID() {
         return this.airportID;
     }
+    public int getIndicator() {
+        return this.indicator;
+    }
 
     public FlightWritableComparable(int airportID, int indicator) {
         super();
@@ -24,8 +27,8 @@ public class FlightWritableComparable implements WritableComparable<FlightWritab
 
     @Override
     public int compareTo(FlightWritableComparable flightWritableComparable) {
-        if (this.airportID == flightWritableComparable.airportID) {
-            return this.indicator - flightWritableComparable.indicator;
+        if (this.getAirportID() == flightWritableComparable.getAirportID()) {
+            return this.getIndicator() - flightWritableComparable.getIndicator();
         }
         return this.airportID - flightWritableComparable.airportID;
     }

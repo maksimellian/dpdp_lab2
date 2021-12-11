@@ -9,7 +9,7 @@ import java.util.Iterator;
 // Разрабатываем reduce функцию, которая берет первую строку, извлекает из
 // нее имя аэропорта, далее рассчитывает из последующих строк среднее
 // минимальное и максимальное время задержки и печатает результат.
-public class AirportReducer extends Reducer<FlightWritableComparable, Text, IntWritable, Text> {
+public class AirportReducer extends Reducer<FlightWritableComparable, Text, Text, Text> {
 
     @Override
     protected void reduce(FlightWritableComparable key, Iterable<Text> values, Context context) throws
@@ -19,7 +19,7 @@ public class AirportReducer extends Reducer<FlightWritableComparable, Text, IntW
         float maxDelay = Float.MIN_VALUE;
         float totalDelay = 0;
         Iterator<Text> iterator = values.iterator();
-        String airportName = iterator.next().toString();
+        String airportName = new Text(iterator.next()).toString();
         while (iterator.hasNext()) {
             float delay = Float.parseFloat(iterator.next().toString());
             if (delay < minDelay) {
@@ -33,7 +33,7 @@ public class AirportReducer extends Reducer<FlightWritableComparable, Text, IntW
         }
         if (counter > 0) {
             String res = String.format("%.2f %.2f %.2f %.2f", totalDelay/counter, minDelay, maxDelay, totalDelay);
-            context.write(new IntWritable(key.getAirportID()), new Text(res));
+            context.write(new Text(airportName.replaceAll("\"", "")), new Text(res));
         }
     }
 }
