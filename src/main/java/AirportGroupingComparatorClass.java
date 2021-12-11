@@ -6,7 +6,8 @@ public class AirportGroupingComparatorClass extends WritableComparator{
         super(FlightWritableComparable.class, true);
     }
 
-    public int compare(WritableComparable a) {
-
+    @Override
+    public int compare(WritableComparable a, WritableComparable b) {
+        return 
     }
 }
