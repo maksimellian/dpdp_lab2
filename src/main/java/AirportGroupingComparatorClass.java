@@ -8,6 +8,6 @@ public class AirportGroupingComparatorClass extends WritableComparator{
 
     @Override
     public int compare(WritableComparable a, WritableComparable b) {
-        FlightWritableComparable first = 
+        FlightWritableComparable first = (Air)
     }
 }
