@@ -5,7 +5,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
-
+public static final float CANCELLED = 
 
 //применяется к каждой строке файла и преобразует в ее в набор пар key value
 public class FlightMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
