@@ -5,7 +5,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
-//применяется к каждой строке файла и преобразует в 
+//применяется к каждой строке файла и преобразует в ее в набор 
 public class FlightMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException,
