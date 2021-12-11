@@ -6,6 +6,7 @@ import org.apache.hadoop.mapreduce.Reducer;
 import java.io.IOException;
 
 public class AirportReducer extends Reducer<FlightWritableComparable, Text, IntWritable, Text> {
+    
     @Override
     protected void reduce(Text key, Iterable<IntWritable> values, Context context) throws
             IOException, InterruptedException {
