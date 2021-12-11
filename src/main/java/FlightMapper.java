@@ -12,6 +12,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableCompa
     public static final float CANCELLED = 1.0f;
     public static final int DEST_AIRPORT_ID = 14; // номер колонки id аэропорта прибытия
     public static final int DELAY = 18; // номер колонки задержки
+    public static final int INDICATOR = 1; // индикатор датасета
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException,
             InterruptedException {
