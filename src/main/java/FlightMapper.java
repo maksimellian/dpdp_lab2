@@ -1,12 +1,8 @@
-import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
-
-
-
 //применяется к каждой строке файла и преобразует в ее в набор пар key value
 public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableComparable, Text> {
     public static final float CANCELLED = 1.0f;
@@ -23,11 +19,5 @@ public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableCompa
                 context.write(new FlightWritableComparable(Integer.parseInt(airportID), INDICATOR), new Text(rows[DELAY]));
             }
         }
-        /*String str = value.toString().toLowerCase();
-        str = str.replaceAll("[^'а-я\\w-'а-я]"," ");
-        String[] words = str.split(" ");
-        for (int i = 0; i < words.length; i++) {
-            context.write(new Text(words[i]), new IntWritable(1));
-        }*/
     }
 }
