@@ -16,7 +16,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableCompa
         if (key.get() > 0) {
             String airportID = rows[DEST_AIRPORT_ID];
             String flightDelay = rows[DELAY];
-            boolean cancelled = Float.parseFloat()
+            boolean cancelled = Float.parseFloat(row[])
             if (!rows[DELAY].isEmpty()) {
                 context.write(new FlightWritableComparable(Integer.parseInt(airportID), INDICATOR), new Text(flightDelay));
             }
