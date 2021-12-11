@@ -18,7 +18,7 @@ public class FlightWritableComparable implements WritableComparable<FlightWritab
         if (this.airportID == flightWritableComparable.airportID) {
             return this.indicator - flightWritableComparable.indicator;
         }
-        return flightWritableComparable.indi
+        return this.
     }
 
     @Override
