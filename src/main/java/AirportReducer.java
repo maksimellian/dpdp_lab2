@@ -16,5 +16,7 @@ public class AirportReducer extends Reducer<FlightWritableComparable, Text, IntW
             IOException, InterruptedException {
         Iterator<Text> iterator = values.iterator();
         String airportName = iterator.next().toString();
+        int counter = 0;
+        
     }
 }
