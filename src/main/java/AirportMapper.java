@@ -13,7 +13,7 @@ public class AirportMapper extends Mapper<LongWritable, Text, Text, IntWritable>
             InterruptedException {
         String[] airports = value.toString().split(",");
         if (key.get() > 0) {
-            context.write(new Flight);
+            context.write(new FlightWritableComparable());
         }
     }
 }
