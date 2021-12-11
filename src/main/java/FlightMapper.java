@@ -11,6 +11,7 @@ import java.io.IOException;
 public class FlightMapper extends Mapper<LongWritable, Text, FlightWritableComparable, IntWritable> {
     public static final float CANCELLED = 1.0f;
     public static final int AIRPORT_ID = 14; // номер колонки id аэропорта
+    public static final int DELAY = 18; // номер колонки задержки
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException,
             InterruptedException {
